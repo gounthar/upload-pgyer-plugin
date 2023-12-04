@@ -3,14 +3,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
-        <java.level>8</java.level>
-        <jenkins.version>2.277.1</jenkins.version>
+        <jenkins.version>2.346.3</jenkins.version>
     </properties>
 
     <parent>
         <groupId>org.jenkins-ci.plugins</groupId>
         <artifactId>plugin</artifactId>
-        <version>4.4</version>
+        <version>4.51</version>
         <relativePath />
     </parent>
 
@@ -20,6 +19,17 @@
     <packaging>hpi</packaging>
     <name>Upload to pgyer</name>
     <description>Upload to pgyer for jenkins plugin</description>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.jenkins.tools.bom</groupId>
+                <artifactId>bom-2.277.x</artifactId>
+                <version>984.vb5eaac999a7e</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <!-- see: https://www.jenkins.io/blog/2019/10/21/plugin-docs-on-github/ -->
     <url>https://github.com/jenkinsci/upload-pgyer-plugin/blob/master/README.md</url>
 
@@ -64,13 +74,11 @@
         <dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
             <artifactId>structs</artifactId>
-            <version>1.20</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.ant</groupId>
             <artifactId>ant</artifactId>
-            <version>1.10.12</version>
         </dependency>
 
         <dependency>
