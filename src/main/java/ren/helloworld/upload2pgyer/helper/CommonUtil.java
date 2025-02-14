@@ -6,15 +6,12 @@ import hudson.model.Result;
 import org.apache.tools.ant.DirectoryScanner;
 import ren.helloworld.upload2pgyer.impl.Message;
 
-import java.io.*;
-import java.net.URL;
-import java.net.URLConnection;
+import java.io.File;
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class CommonUtil {
     public static final String LOG_PREFIX = "[UPLOAD TO PGYER] - ";

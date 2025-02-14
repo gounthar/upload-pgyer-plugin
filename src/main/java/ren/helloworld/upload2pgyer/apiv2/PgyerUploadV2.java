@@ -8,7 +8,7 @@ import ren.helloworld.upload2pgyer.helper.CommonUtil;
 import ren.helloworld.upload2pgyer.helper.ProgressRequestBody;
 import ren.helloworld.upload2pgyer.impl.Message;
 
-import javax.swing.*;
+import javax.swing.Timer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
