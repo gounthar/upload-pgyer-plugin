@@ -3,14 +3,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
-        <java.level>8</java.level>
-        <jenkins.version>2.277.1</jenkins.version>
+        <!-- https://www.jenkins.io/doc/developer/plugin-development/choosing-jenkins-baseline/ -->
+        <jenkins.baseline>2.479</jenkins.baseline>
+        <jenkins.version>${jenkins.baseline}.1</jenkins.version>
     </properties>
 
     <parent>
         <groupId>org.jenkins-ci.plugins</groupId>
         <artifactId>plugin</artifactId>
-        <version>4.4</version>
+        <version>5.7</version>
         <relativePath />
     </parent>
 
@@ -20,6 +21,17 @@
     <packaging>hpi</packaging>
     <name>Upload to pgyer</name>
     <description>Upload to pgyer for jenkins plugin</description>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.jenkins.tools.bom</groupId>
+                <artifactId>bom-${jenkins.baseline}.x</artifactId>
+                <version>4136.vca_c3202a_7fd1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <!-- see: https://www.jenkins.io/blog/2019/10/21/plugin-docs-on-github/ -->
     <url>https://github.com/jenkinsci/upload-pgyer-plugin/blob/master/README.md</url>
 
@@ -30,21 +42,6 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-
-    <developers>
-        <developer>
-            <id>myroid</id>
-            <name>fan yang</name>
-            <email>myroid@foxmail.com</email>
-            <url>https://iamfan.net</url>
-        </developer>
-
-        <developer>
-            <id>manongxiaoyun</id>
-            <name>xiaoyun</name>
-            <email>562007588@qq.com</email>
-        </developer>
-    </developers>
 
     <repositories>
         <repository>
@@ -64,13 +61,11 @@
         <dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
             <artifactId>structs</artifactId>
-            <version>1.20</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.ant</groupId>
             <artifactId>ant</artifactId>
-            <version>1.10.12</version>
         </dependency>
 
         <dependency>
@@ -93,7 +88,7 @@
     </dependencies>
 
     <scm>
-        <connection>scm:git:ssh://github.com/jenkinsci/upload-pgyer-plugin.git</connection>
+        <connection>scm:git:https://github.com/jenkinsci/upload-pgyer-plugin.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/jenkinsci/upload-pgyer-plugin.git</developerConnection>
         <url>https://github.com/jenkinsci/upload-pgyer-plugin</url>
         <tag>HEAD</tag>
